@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@color/title_bg"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/img_battery_back"
+            android:layout_width="50dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:src="@drawable/selector_btn_back" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@+id/img_battery_back"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:layout_toRightOf="@id/img_battery_back"
+            android:text="电池信息"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+        <ToggleButton
+            android:id="@+id/tbtn_battery_auto_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textOff="自动刷新"
+            android:textOn="自动刷新" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_batterylist"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dip"
+        android:background="@android:color/transparent"
+        android:indeterminateDrawable="@drawable/progress_bg" />
+
+    <ListView
+        android:id="@+id/lv_battery"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/black"
+        android:dividerHeight="1px"
+        android:fadingEdge="none"
+        android:scrollbarStyle="outsideOverlay" />
+
+</LinearLayout>

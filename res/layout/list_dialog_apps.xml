@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="20dip"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top_layout_list_dialog_apps"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_top"
+        android:minHeight="60dp" >
+
+        <LinearLayout
+            android:id="@+id/layout_icons_list_dialog_apps"
+            android:layout_width="wrap_content"
+            android:layout_height="60dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:paddingBottom="5dip"
+            android:layout_alignParentLeft="true"
+            android:paddingTop="5dip" >
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title_list_dialog_apps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/layout_icons_list_dialog_apps"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:text="运行程序信息" />
+        
+        <ImageView 
+            android:id="@+id/img_list_dialog_apps_close"
+             android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/selector_btn_close"
+            android:clickable="true"
+            android:layout_marginRight="10dip"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_content"
+        android:paddingBottom="10dp"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/list_dialog_apps_lists"
+            android:layout_width="fill_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:fadingEdge="none"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

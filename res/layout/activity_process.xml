@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@color/title_bg"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/img_process_back"
+            android:layout_width="50dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:src="@drawable/selector_btn_back" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@+id/img_process_back"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:layout_toRightOf="@id/img_process_back"
+            android:text="进程列表"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <ToggleButton
+            android:id="@+id/tbtn_process_auto_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textOff="进程"
+            android:textOn="进程" />
+
+        <ToggleButton
+            android:id="@+id/tbtn_cpu_auto_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tbtn_process_auto_refresh"
+            android:textOff="CPU+内存"
+            android:textOn="CPU+内存" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tbtn_cpu_auto_refresh"
+            android:text="自动刷新→"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_cpuprocesslist_pannel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/darker_gray"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/layout_cpu_pannel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/text_processlist_cpu_info"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:padding="5dip"
+                android:textColor="@android:color/black" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="fill_parent"
+                android:background="@color/title_bg" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="3"
+                android:orientation="horizontal"
+                android:padding="5dip" >
+
+                <TextView
+                    android:id="@+id/text_process_system_memoryinfo_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/text_process_system_memoryinfo_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@android:color/black" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/title_bg" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/layout_processlist_pid"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="2"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <com.zgy.debugtool.view.MarqueeTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left"
+                    android:ellipsize="marquee"
+                    android:gravity="center_vertical|right"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:paddingLeft="5dip"
+                    android:text="pid"
+                    android:textColor="@android:color/black" />
+
+                <ImageView
+                    android:id="@+id/img_processlist_pid"
+                    android:layout_width="15dip"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="fill_parent"
+                android:background="@color/title_bg" />
+
+            <LinearLayout
+                android:id="@+id/layout_processlist_uid"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="2"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <com.zgy.debugtool.view.MarqueeTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left"
+                    android:ellipsize="marquee"
+                    android:gravity="center_vertical|right"
+                    android:paddingLeft="5dip"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="uid"
+                    android:textColor="@android:color/black" />
+
+                <ImageView
+                    android:id="@+id/img_processlist_uid"
+                    android:layout_width="15dip"
+                    android:layout_height="fill_parent"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="fill_parent"
+                android:background="@color/title_bg" />
+
+            <LinearLayout
+                android:id="@+id/layout_processlist_memory"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="2"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <com.zgy.debugtool.view.MarqueeTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left"
+                    android:paddingLeft="5dip"
+                    android:ellipsize="marquee"
+                    android:gravity="center_vertical|right"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="内存"
+                    android:textColor="@android:color/black" />
+
+                <ImageView
+                    android:id="@+id/img_processlist_memory"
+                    android:layout_width="15dip"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="fill_parent"
+                android:background="@color/title_bg" />
+
+            <RelativeLayout
+                android:id="@+id/layout_processlist_package"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <com.zgy.debugtool.view.MarqueeTextView
+                    android:id="@+id/text_processlist_label_pkgname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical|right"
+                    android:layout_alignParentLeft="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:paddingLeft="5dip"
+                    android:text="进程名称 + 运行程序"
+                    android:textColor="@android:color/black" />
+
+                <ImageView
+                    android:id="@+id/img_processlist_name"
+                    android:layout_width="15dip"
+                    android:layout_toRightOf="@id/text_processlist_label_pkgname"
+                    android:layout_height="wrap_content"
+                     android:layout_centerVertical="true"
+                    android:visibility="invisible" />
+
+                <ToggleButton
+                    android:id="@+id/tbtn_prcesslist_lines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:textOff="精简"
+                    android:textOn="精简" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_processlist"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dip"
+        android:background="@android:color/transparent"
+        android:indeterminateDrawable="@drawable/progress_bg" />
+
+    <ListView
+        android:id="@+id/lv_process"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/black"
+        android:dividerHeight="1px"
+        android:fadingEdge="none"
+        android:scrollbarStyle="outsideOverlay" />
+
+</LinearLayout>

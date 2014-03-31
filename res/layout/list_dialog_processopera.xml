@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_top"
+        android:minHeight="60dp" >
+
+        <LinearLayout
+            android:id="@+id/layout_list_dialog_opera_icons"
+            android:layout_width="wrap_content"
+            android:layout_height="60dip"
+            android:gravity="center_vertical"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:paddingTop="5dip"
+            android:paddingBottom="5dip"
+            android:orientation="horizontal" >
+        </LinearLayout>
+ 
+        <com.zgy.debugtool.view.MarqueeTextView
+            android:id="@+id/text_title_list_dialog_opera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@id/layout_list_dialog_opera_icons"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="55dip"
+            android:layout_marginTop="5dp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+        
+         <ImageView 
+            android:id="@+id/img_list_dialog_opera_close"
+             android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/selector_btn_close"
+            android:clickable="true"
+            android:layout_marginRight="10dip"
+            />
+         
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_content"
+        android:paddingBottom="10dp"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/value_list"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:divider="@drawable/list_dialog_divider"
+            android:focusable="true" />
+ 
+    </LinearLayout>
+
+</LinearLayout>

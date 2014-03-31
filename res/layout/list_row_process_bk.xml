@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <com.zgy.debugtool.view.MarqueeTextView
+        android:id="@+id/text_processitem_pid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:paddingLeft="3dip"
+         android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingBottom="10dip"
+        android:paddingTop="10dip"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="fill_parent"
+        android:background="@color/title_bg" />
+
+    <com.zgy.debugtool.view.MarqueeTextView
+        android:id="@+id/text_processitem_uid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:paddingBottom="10dip"
+         android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingLeft="3dip"
+        android:paddingTop="10dip"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="fill_parent"
+        android:background="@color/title_bg" />
+
+    <com.zgy.debugtool.view.MarqueeTextView
+        android:id="@+id/text_processitem_memory"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:paddingLeft="3dip"
+        android:paddingBottom="10dip"
+         android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingTop="10dip"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="fill_parent"
+        android:background="@color/title_bg" />
+
+    <com.zgy.debugtool.view.MarqueeTextView
+        android:id="@+id/text_processitem_package"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        
+        android:paddingBottom="10dip"
+        android:paddingLeft="3dip"
+        android:paddingTop="10dip"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>

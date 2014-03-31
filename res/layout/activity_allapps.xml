@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@color/title_bg"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/img_apps_back"
+            android:layout_width="50dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:src="@drawable/selector_btn_back" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@+id/img_apps_back"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:layout_toRightOf="@id/img_apps_back"
+            android:text="所有程序列表"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+              <Button
+            android:id="@+id/btn_apps_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:text="刷新" /> 
+            
+<!--         <ToggleButton
+            android:id="@+id/tbtn_apps_auto_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:textOff="自动刷新"
+            android:textOn="自动刷新" /> -->
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_appslist_pannel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/darker_gray"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/text_appslist_used"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dip"
+            android:text="已用 :100M"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="fill_parent"
+            android:background="@color/title_bg" />
+
+        <TextView
+            android:id="@+id/text_apps_list_left"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="全部:10000M"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/title_bg" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:background="@color/darker_gray"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/layout_appslist_logo"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.1"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:gravity="center_vertical|right"
+                android:singleLine="true"
+                android:text="logo"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="fill_parent"
+            android:background="@color/title_bg" />
+
+        <LinearLayout
+            android:id="@+id/layout_appslist_name"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.6"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:gravity="center_vertical|right"
+                android:paddingLeft="5dip"
+                android:singleLine="true"
+                android:text="名称"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/img_appslist_name"
+                android:layout_width="15dip"
+                android:layout_height="fill_parent"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="fill_parent"
+            android:background="@color/title_bg" />
+
+        <LinearLayout
+            android:id="@+id/layout_appslist_runsize"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:gravity="center_vertical|right"
+                android:paddingLeft="5dip"
+                android:text="大小"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/img_appslist_runsize"
+                android:layout_width="15dip"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="fill_parent"
+            android:background="@color/title_bg" />
+
+        <RelativeLayout
+            android:id="@+id/layout_appslist_time"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.8"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/text_appslist_label_time"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_vertical|right"
+                android:paddingLeft="5dip"
+                android:text="安装时间 "
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/img_appslist_time"
+                android:layout_width="15dip"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/text_appslist_label_time"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_appslist_package"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.8"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/text_appslist_label_pkgname"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_vertical|right"
+                android:paddingLeft="5dip"
+                android:text="包名"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/img_appslist_pkg"
+                android:layout_width="15dip"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/text_appslist_label_pkgname"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_appslist"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dip"
+        android:background="@android:color/transparent"
+        android:indeterminateDrawable="@drawable/progress_bg" />
+
+    <ListView
+        android:id="@+id/lv_apps"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/black"
+        android:dividerHeight="1px"
+        android:fadingEdge="none"
+        android:scrollbarStyle="outsideOverlay" />
+
+</LinearLayout>

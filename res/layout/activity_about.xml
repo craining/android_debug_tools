@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@color/title_bg"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/img_about_back"
+            android:layout_width="50dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:src="@drawable/selector_btn_back" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_toRightOf="@+id/img_about_back"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:layout_toRightOf="@id/img_about_back"
+            android:text="关于"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:fadingEdge="none"
+        android:scrollbarStyle="outsideOverlay" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_about_title"
+                android:layout_width="wrap_content"
+                android:layout_height="60dip"
+                android:layout_gravity="center_horizontal"
+                android:text="开发助手"
+                android:gravity="top"
+                android:layout_marginTop="10dip" />
+            
+            <com.zgy.debugtool.view.jumpview.JumpViewTogether
+                android:id="@+id/text_jump_about_title"
+                android:layout_width="wrap_content"
+                android:layout_height="60dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dip"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:padding="20dip"
+                android:text="本测试工具可以方面的查看手机当前的运行情况，包括：\r\n\r\n\t1.实时展示当前运行的程序\r\n\t2.实时进程信息展示，进程控制\r\n\t3.实时CPU、内存使用情况\r\n\t4.实时电池信息展示\r\n5.展示所有程序信息"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:padding="20dip"
+                android:text="2014-01  auther: ZGY.\r\n欢迎加Android开发群：88130145\r\n\r\n当前版本v1.1"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
